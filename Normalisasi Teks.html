@@ -1,0 +1,2179 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>NORMALISASI TEKS &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Normalisasi Teks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reduksi Dimensi dengan Menggunakan Latent Dirichlet Allocation (LDA)" href="Reduksi%20Dimensi%20dengan%20LDA%20dan%20K-Mean%20Clustering.html" />
+    <link rel="prev" title="CRAWLING DATA PTA TRUNOJOYO" href="Crawling%20Web.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Crawling%20Web.html"><strong>CRAWLING DATA PTA TRUNOJOYO</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>NORMALISASI TEKS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reduksi%20Dimensi%20dengan%20LDA%20dan%20K-Mean%20Clustering.html"><strong>Reduksi Dimensi dengan Menggunakan Latent Dirichlet Allocation (LDA)</strong></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="UTS_PPW.html"><strong>UTS PENCARIAN DAN PENAMBANGAN DATA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling_Berita.html"><strong>Tugas Crawling Berita</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNormalisasi Teks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Normalisasi Teks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>NORMALISASI TEKS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi"><strong>Normalisasi</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-data"><strong>Cleaning data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-data-null">Menghapus data Null</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-karakter-tidak-perlu-punctuation">Menghapus Karakter tidak perlu (Punctuation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword">Stopword</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">Tokenisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steaming">Steaming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-model-vsm">Vector Space Model (VSM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoder">One Hot Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temr-frequency">Temr Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-frequency">Log Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF IDF</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="normalisasi-teks">
+<h1><strong>NORMALISASI TEKS</strong><a class="headerlink" href="#normalisasi-teks" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Punctuation process menghilangkan tanda baca dan simbol</p></li>
+<li><p>stopword</p></li>
+<li><p>Tokenisasi</p></li>
+<li><p>Steeming</p></li>
+<li><p>Feature extraction dan membentuk VSM dalam term frequency, logarithm freqency, one-hot encoding,  TF-IDF</p></li>
+</ol>
+<p><strong>Import library</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
+
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data] Downloading package punkt to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Mengambil data Skripsi</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">cd</span> /content/
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;data_skripsi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gdown</span>
+<span class="c1"># download data</span>
+
+<span class="n">nama_data</span> <span class="o">=</span> <span class="s1">&#39;/content/data_skripsi/data_skripsi.csv&#39;</span>
+<span class="n">gdown</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://drive.google.com/uc?id=1iJWlWqGNROHiBf2qv329gGSkwhYJfVMT&#39;</span><span class="p">,</span> <span class="n">nama_data</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
+From: https://drive.google.com/uc?id=1iJWlWqGNROHiBf2qv329gGSkwhYJfVMT
+To: /content/data_skripsi/data_skripsi.csv
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/1.25M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1.25M/1.25M [00:00&lt;00:00, 78.8MB/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/content/data_skripsi/data_skripsi.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/data_skripsi/data_skripsi.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-299b4086-1dbe-4d40-a94a-d91508396405" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Penulis</th>
+      <th>Dosen Pembimbing I</th>
+      <th>Dosen Pembimbing II</th>
+      <th>Abstrak</th>
+      <th>Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE  ...</td>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>Budi Setyono M.T</td>
+      <td>Hermawan S.T</td>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
+      <td>M. Basith Ardianto,</td>
+      <td>Drs. Budi Soesilo, MT</td>
+      <td>Koko Joni, ST</td>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>RANCANG BANGUN APLIKASI PROXY SERVER UNTUK ENK...</td>
+      <td>Akhmad Suyandi, S.Kom</td>
+      <td>Drs. Budi Soesilo, M.T</td>
+      <td>Hermawan, ST, MT</td>
+      <td>Web server adalah sebuah perangkat lunak serve...</td>
+      <td>RPL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
+      <td>Heri Supriyanto</td>
+      <td>Mulaab, S.Si., M.Kom</td>
+      <td>Firli Irhamni, ST., M.Kom</td>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>KK</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
+      <td>Septian Rahman Hakim</td>
+      <td>Arik Kurniawati, S.Kom., M.T.</td>
+      <td>Haryanto, S.T., M.T.</td>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+      <td>KK</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>853</th>
+      <td>PENERAPAN ALGORITMA LONG-SHORT TERM MEMORY UNT...</td>
+      <td>Rachmad Agung Pambudi</td>
+      <td>Eka Mala Sari Rochman, S.Kom., M.Kom</td>
+      <td>Sri Herawati, S.Kom., M.Kom</td>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+      <td>KK</td>
+    </tr>
+    <tr>
+      <th>854</th>
+      <td>SISTEM PENCARIAN TEKS AL-QURAN TERJEMAHAN BERB...</td>
+      <td>Nadila Hidayanti</td>
+      <td>Achmad Jauhari, S.T., M.Kom</td>
+      <td>Ika Oktavia Suzanti, S.Kom., M.Cs</td>
+      <td>Information Retrieval (IR) merupakan pengambil...</td>
+      <td>KK</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>KLASIFIKASI KOMPLEKSITAS VISUAL CITRA SAMPAH M...</td>
+      <td>Afni Sakinah</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Klasifikasi citra merupakan proses pengelompok...</td>
+      <td>KK</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>IDENTIFIKASI BINER ATRIBUT PEJALAN KAKI MENGGU...</td>
+      <td>Friska Fatmawatiningrum</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Prof. Dr. Arief Muntasa, S.Si., M.MT.</td>
+      <td>Identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>KK</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>DETEKSI OBJEK MANUSIA BERBASIS ONE STAGE DETEC...</td>
+      <td>Dian Wibowo</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Topik deteksi objek telah menarik perhatian ya...</td>
+      <td>KK</td>
+    </tr>
+  </tbody>
+</table>
+<p>858 rows × 6 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-299b4086-1dbe-4d40-a94a-d91508396405')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-299b4086-1dbe-4d40-a94a-d91508396405 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-299b4086-1dbe-4d40-a94a-d91508396405');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<p><strong>Mengambil data abstrak</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_abstrak</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span>
+<span class="n">data_abstrak</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      Sistem  informasi  akademik  (SIAKAD) merupaka...
+1      Berjalannya koneksi jaringan komputer dengan l...
+2      Web server adalah sebuah perangkat lunak serve...
+3      Penjadwalan  kuliah  di  Perguruan  Tinggi  me...
+4      Seiring perkembangan teknologi yang ada diduni...
+                             ...                        
+853    Investasi saham selama ini memiliki resiko ker...
+854    Information Retrieval (IR) merupakan pengambil...
+855    Klasifikasi citra merupakan proses pengelompok...
+856    Identifikasi atribut pejalan kaki merupakan sa...
+857    Topik deteksi objek telah menarik perhatian ya...
+Name: Abstrak, Length: 858, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<section id="normalisasi">
+<h2><strong>Normalisasi</strong><a class="headerlink" href="#normalisasi" title="Permalink to this heading">#</a></h2>
+<section id="cleaning-data">
+<h3><strong>Cleaning data</strong><a class="headerlink" href="#cleaning-data" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="menghapus-data-null">
+<h3>Menghapus data Null<a class="headerlink" href="#menghapus-data-null" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cek apakah ada data yang kosong</span>
+<span class="n">data_abstrak</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># membersihkan data yang kosong</span>
+<span class="n">data_abstrak</span> <span class="o">=</span> <span class="n">data_abstrak</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">data_abstrak</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghapus-karakter-tidak-perlu-punctuation">
+<h3>Menghapus Karakter tidak perlu (Punctuation)<a class="headerlink" href="#menghapus-karakter-tidak-perlu-punctuation" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_punctuation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#========</span>
+<span class="c1"># Menghilangkan angka dari kolom &#39;new_abstrak&#39;</span>
+<span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_punctuation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_punctuation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-8255ac9f-0180-4241-8769-4c4f020fc1ce" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Penulis</th>
+      <th>Dosen Pembimbing I</th>
+      <th>Dosen Pembimbing II</th>
+      <th>Abstrak</th>
+      <th>Label</th>
+      <th>Abstrak_punctuation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE  ...</td>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>Budi Setyono M.T</td>
+      <td>Hermawan S.T</td>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>RPL</td>
+      <td>sistem  informasi  akademik  siakad merupakan ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
+      <td>M. Basith Ardianto,</td>
+      <td>Drs. Budi Soesilo, MT</td>
+      <td>Koko Joni, ST</td>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>RPL</td>
+      <td>berjalannya koneksi jaringan komputer dengan l...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>RANCANG BANGUN APLIKASI PROXY SERVER UNTUK ENK...</td>
+      <td>Akhmad Suyandi, S.Kom</td>
+      <td>Drs. Budi Soesilo, M.T</td>
+      <td>Hermawan, ST, MT</td>
+      <td>Web server adalah sebuah perangkat lunak serve...</td>
+      <td>RPL</td>
+      <td>web server adalah sebuah perangkat lunak serve...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
+      <td>Heri Supriyanto</td>
+      <td>Mulaab, S.Si., M.Kom</td>
+      <td>Firli Irhamni, ST., M.Kom</td>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>KK</td>
+      <td>penjadwalan  kuliah  di  perguruan  tinggi  me...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
+      <td>Septian Rahman Hakim</td>
+      <td>Arik Kurniawati, S.Kom., M.T.</td>
+      <td>Haryanto, S.T., M.T.</td>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+      <td>KK</td>
+      <td>seiring perkembangan teknologi yang ada diduni...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>853</th>
+      <td>PENERAPAN ALGORITMA LONG-SHORT TERM MEMORY UNT...</td>
+      <td>Rachmad Agung Pambudi</td>
+      <td>Eka Mala Sari Rochman, S.Kom., M.Kom</td>
+      <td>Sri Herawati, S.Kom., M.Kom</td>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+      <td>KK</td>
+      <td>investasi saham selama ini memiliki resiko ker...</td>
+    </tr>
+    <tr>
+      <th>854</th>
+      <td>SISTEM PENCARIAN TEKS AL-QURAN TERJEMAHAN BERB...</td>
+      <td>Nadila Hidayanti</td>
+      <td>Achmad Jauhari, S.T., M.Kom</td>
+      <td>Ika Oktavia Suzanti, S.Kom., M.Cs</td>
+      <td>Information Retrieval (IR) merupakan pengambil...</td>
+      <td>KK</td>
+      <td>information retrieval ir merupakan pengambilan...</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>KLASIFIKASI KOMPLEKSITAS VISUAL CITRA SAMPAH M...</td>
+      <td>Afni Sakinah</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Klasifikasi citra merupakan proses pengelompok...</td>
+      <td>KK</td>
+      <td>klasifikasi citra merupakan proses pengelompok...</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>IDENTIFIKASI BINER ATRIBUT PEJALAN KAKI MENGGU...</td>
+      <td>Friska Fatmawatiningrum</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Prof. Dr. Arief Muntasa, S.Si., M.MT.</td>
+      <td>Identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>KK</td>
+      <td>identifikasi atribut pejalan kaki merupakan sa...</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>DETEKSI OBJEK MANUSIA BERBASIS ONE STAGE DETEC...</td>
+      <td>Dian Wibowo</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Topik deteksi objek telah menarik perhatian ya...</td>
+      <td>KK</td>
+      <td>topik deteksi objek telah menarik perhatian ya...</td>
+    </tr>
+  </tbody>
+</table>
+<p>858 rows × 7 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8255ac9f-0180-4241-8769-4c4f020fc1ce')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-8255ac9f-0180-4241-8769-4c4f020fc1ce button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-8255ac9f-0180-4241-8769-4c4f020fc1ce');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_abstrak_new</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_punctuation&#39;</span><span class="p">]</span>
+<span class="n">data_abstrak_new</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      sistem  informasi  akademik  siakad merupakan ...
+1      berjalannya koneksi jaringan komputer dengan l...
+2      web server adalah sebuah perangkat lunak serve...
+3      penjadwalan  kuliah  di  perguruan  tinggi  me...
+4      seiring perkembangan teknologi yang ada diduni...
+                             ...                        
+853    investasi saham selama ini memiliki resiko ker...
+854    information retrieval ir merupakan pengambilan...
+855    klasifikasi citra merupakan proses pengelompok...
+856    identifikasi atribut pejalan kaki merupakan sa...
+857    topik deteksi objek telah menarik perhatian ya...
+Name: Abstrak_punctuation, Length: 858, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stopword">
+<h3>Stopword<a class="headerlink" href="#stopword" title="Permalink to this heading">#</a></h3>
+<p>kata-kata umum yang sering muncul dalam teks namun memiliki sedikit nilai informatif dalam analisis teks atau pemrosesan bahasa alami</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi kamus stop words dari NLTK</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>  <span class="c1"># Inisialisasi kamus stop words di luar loop</span>
+<span class="c1"># Fungsi untuk menghapus stop words</span>
+<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># Periksa apakah teks adalah string</span>
+        <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># Mengembalikan string kosong untuk nilai non-string</span>
+
+<span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_Stopword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_abstrak_new</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-b37551c6-e68c-42fd-a093-9369b677edbe" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Penulis</th>
+      <th>Dosen Pembimbing I</th>
+      <th>Dosen Pembimbing II</th>
+      <th>Abstrak</th>
+      <th>Label</th>
+      <th>Abstrak_punctuation</th>
+      <th>Abstrak_Stopword</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE  ...</td>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>Budi Setyono M.T</td>
+      <td>Hermawan S.T</td>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>RPL</td>
+      <td>sistem  informasi  akademik  siakad merupakan ...</td>
+      <td>sistem informasi akademik siakad sistem inform...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
+      <td>M. Basith Ardianto,</td>
+      <td>Drs. Budi Soesilo, MT</td>
+      <td>Koko Joni, ST</td>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>RPL</td>
+      <td>berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>berjalannya koneksi jaringan komputer lancar g...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>RANCANG BANGUN APLIKASI PROXY SERVER UNTUK ENK...</td>
+      <td>Akhmad Suyandi, S.Kom</td>
+      <td>Drs. Budi Soesilo, M.T</td>
+      <td>Hermawan, ST, MT</td>
+      <td>Web server adalah sebuah perangkat lunak serve...</td>
+      <td>RPL</td>
+      <td>web server adalah sebuah perangkat lunak serve...</td>
+      <td>web server perangkat lunak server berfungsi me...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
+      <td>Heri Supriyanto</td>
+      <td>Mulaab, S.Si., M.Kom</td>
+      <td>Firli Irhamni, ST., M.Kom</td>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>KK</td>
+      <td>penjadwalan  kuliah  di  perguruan  tinggi  me...</td>
+      <td>penjadwalan kuliah perguruan kompleks permasal...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
+      <td>Septian Rahman Hakim</td>
+      <td>Arik Kurniawati, S.Kom., M.T.</td>
+      <td>Haryanto, S.T., M.T.</td>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+      <td>KK</td>
+      <td>seiring perkembangan teknologi yang ada diduni...</td>
+      <td>seiring perkembangan teknologi didunia muncul ...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>853</th>
+      <td>PENERAPAN ALGORITMA LONG-SHORT TERM MEMORY UNT...</td>
+      <td>Rachmad Agung Pambudi</td>
+      <td>Eka Mala Sari Rochman, S.Kom., M.Kom</td>
+      <td>Sri Herawati, S.Kom., M.Kom</td>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+      <td>KK</td>
+      <td>investasi saham selama ini memiliki resiko ker...</td>
+      <td>investasi saham memiliki resiko kerugian dikar...</td>
+    </tr>
+    <tr>
+      <th>854</th>
+      <td>SISTEM PENCARIAN TEKS AL-QURAN TERJEMAHAN BERB...</td>
+      <td>Nadila Hidayanti</td>
+      <td>Achmad Jauhari, S.T., M.Kom</td>
+      <td>Ika Oktavia Suzanti, S.Kom., M.Cs</td>
+      <td>Information Retrieval (IR) merupakan pengambil...</td>
+      <td>KK</td>
+      <td>information retrieval ir merupakan pengambilan...</td>
+      <td>information retrieval ir pengambilan informasi...</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>KLASIFIKASI KOMPLEKSITAS VISUAL CITRA SAMPAH M...</td>
+      <td>Afni Sakinah</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Klasifikasi citra merupakan proses pengelompok...</td>
+      <td>KK</td>
+      <td>klasifikasi citra merupakan proses pengelompok...</td>
+      <td>klasifikasi citra proses pengelompokan piksel ...</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>IDENTIFIKASI BINER ATRIBUT PEJALAN KAKI MENGGU...</td>
+      <td>Friska Fatmawatiningrum</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Prof. Dr. Arief Muntasa, S.Si., M.MT.</td>
+      <td>Identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>KK</td>
+      <td>identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>identifikasi atribut pejalan kaki salah peneli...</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>DETEKSI OBJEK MANUSIA BERBASIS ONE STAGE DETEC...</td>
+      <td>Dian Wibowo</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Topik deteksi objek telah menarik perhatian ya...</td>
+      <td>KK</td>
+      <td>topik deteksi objek telah menarik perhatian ya...</td>
+      <td>topik deteksi objek menarik perhatian perkemba...</td>
+    </tr>
+  </tbody>
+</table>
+<p>858 rows × 8 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b37551c6-e68c-42fd-a093-9369b677edbe')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b37551c6-e68c-42fd-a093-9369b677edbe button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b37551c6-e68c-42fd-a093-9369b677edbe');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_abstrak_stopword</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_Stopword&#39;</span><span class="p">]</span>
+<span class="n">data_abstrak_stopword</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      sistem informasi akademik siakad sistem inform...
+1      berjalannya koneksi jaringan komputer lancar g...
+2      web server perangkat lunak server berfungsi me...
+3      penjadwalan kuliah perguruan kompleks permasal...
+4      seiring perkembangan teknologi didunia muncul ...
+                             ...                        
+853    investasi saham memiliki resiko kerugian dikar...
+854    information retrieval ir pengambilan informasi...
+855    klasifikasi citra proses pengelompokan piksel ...
+856    identifikasi atribut pejalan kaki salah peneli...
+857    topik deteksi objek menarik perhatian perkemba...
+Name: Abstrak_Stopword, Length: 858, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tokenisasi">
+<h3>Tokenisasi<a class="headerlink" href="#tokenisasi" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_Tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_abstrak_stopword</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-20879206-6d5c-4263-aff0-f05563a03361" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Penulis</th>
+      <th>Dosen Pembimbing I</th>
+      <th>Dosen Pembimbing II</th>
+      <th>Abstrak</th>
+      <th>Label</th>
+      <th>Abstrak_punctuation</th>
+      <th>Abstrak_Stopword</th>
+      <th>Abstrak_Tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PERANCANGAN DAN IMPLEMENTASI SISTEM DATABASE  ...</td>
+      <td>A.Ubaidillah S.Kom</td>
+      <td>Budi Setyono M.T</td>
+      <td>Hermawan S.T</td>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+      <td>RPL</td>
+      <td>sistem  informasi  akademik  siakad merupakan ...</td>
+      <td>sistem informasi akademik siakad sistem inform...</td>
+      <td>[sistem, informasi, akademik, siakad, sistem, ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>APLIKASI KONTROL DAN MONITORING JARINGAN KOMPU...</td>
+      <td>M. Basith Ardianto,</td>
+      <td>Drs. Budi Soesilo, MT</td>
+      <td>Koko Joni, ST</td>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>RPL</td>
+      <td>berjalannya koneksi jaringan komputer dengan l...</td>
+      <td>berjalannya koneksi jaringan komputer lancar g...</td>
+      <td>[berjalannya, koneksi, jaringan, komputer, lan...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>RANCANG BANGUN APLIKASI PROXY SERVER UNTUK ENK...</td>
+      <td>Akhmad Suyandi, S.Kom</td>
+      <td>Drs. Budi Soesilo, M.T</td>
+      <td>Hermawan, ST, MT</td>
+      <td>Web server adalah sebuah perangkat lunak serve...</td>
+      <td>RPL</td>
+      <td>web server adalah sebuah perangkat lunak serve...</td>
+      <td>web server perangkat lunak server berfungsi me...</td>
+      <td>[web, server, perangkat, lunak, server, berfun...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SISTEM PENDUKUNG KEPUTUSAN OPTIMASI PENJADWALA...</td>
+      <td>Heri Supriyanto</td>
+      <td>Mulaab, S.Si., M.Kom</td>
+      <td>Firli Irhamni, ST., M.Kom</td>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+      <td>KK</td>
+      <td>penjadwalan  kuliah  di  perguruan  tinggi  me...</td>
+      <td>penjadwalan kuliah perguruan kompleks permasal...</td>
+      <td>[penjadwalan, kuliah, perguruan, kompleks, per...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>SISTEM AUGMENTED REALITY ANIMASI BENDA BERGERA...</td>
+      <td>Septian Rahman Hakim</td>
+      <td>Arik Kurniawati, S.Kom., M.T.</td>
+      <td>Haryanto, S.T., M.T.</td>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+      <td>KK</td>
+      <td>seiring perkembangan teknologi yang ada diduni...</td>
+      <td>seiring perkembangan teknologi didunia muncul ...</td>
+      <td>[seiring, perkembangan, teknologi, didunia, mu...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>853</th>
+      <td>PENERAPAN ALGORITMA LONG-SHORT TERM MEMORY UNT...</td>
+      <td>Rachmad Agung Pambudi</td>
+      <td>Eka Mala Sari Rochman, S.Kom., M.Kom</td>
+      <td>Sri Herawati, S.Kom., M.Kom</td>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+      <td>KK</td>
+      <td>investasi saham selama ini memiliki resiko ker...</td>
+      <td>investasi saham memiliki resiko kerugian dikar...</td>
+      <td>[investasi, saham, memiliki, resiko, kerugian,...</td>
+    </tr>
+    <tr>
+      <th>854</th>
+      <td>SISTEM PENCARIAN TEKS AL-QURAN TERJEMAHAN BERB...</td>
+      <td>Nadila Hidayanti</td>
+      <td>Achmad Jauhari, S.T., M.Kom</td>
+      <td>Ika Oktavia Suzanti, S.Kom., M.Cs</td>
+      <td>Information Retrieval (IR) merupakan pengambil...</td>
+      <td>KK</td>
+      <td>information retrieval ir merupakan pengambilan...</td>
+      <td>information retrieval ir pengambilan informasi...</td>
+      <td>[information, retrieval, ir, pengambilan, info...</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>KLASIFIKASI KOMPLEKSITAS VISUAL CITRA SAMPAH M...</td>
+      <td>Afni Sakinah</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Klasifikasi citra merupakan proses pengelompok...</td>
+      <td>KK</td>
+      <td>klasifikasi citra merupakan proses pengelompok...</td>
+      <td>klasifikasi citra proses pengelompokan piksel ...</td>
+      <td>[klasifikasi, citra, proses, pengelompokan, pi...</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>IDENTIFIKASI BINER ATRIBUT PEJALAN KAKI MENGGU...</td>
+      <td>Friska Fatmawatiningrum</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Prof. Dr. Arief Muntasa, S.Si., M.MT.</td>
+      <td>Identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>KK</td>
+      <td>identifikasi atribut pejalan kaki merupakan sa...</td>
+      <td>identifikasi atribut pejalan kaki salah peneli...</td>
+      <td>[identifikasi, atribut, pejalan, kaki, salah, ...</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>DETEKSI OBJEK MANUSIA BERBASIS ONE STAGE DETEC...</td>
+      <td>Dian Wibowo</td>
+      <td>Dr. Indah Agustien Siradjuddin, S.Kom., M.Kom.</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>Topik deteksi objek telah menarik perhatian ya...</td>
+      <td>KK</td>
+      <td>topik deteksi objek telah menarik perhatian ya...</td>
+      <td>topik deteksi objek menarik perhatian perkemba...</td>
+      <td>[topik, deteksi, objek, menarik, perhatian, pe...</td>
+    </tr>
+  </tbody>
+</table>
+<p>858 rows × 9 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-20879206-6d5c-4263-aff0-f05563a03361')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-20879206-6d5c-4263-aff0-f05563a03361 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-20879206-6d5c-4263-aff0-f05563a03361');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abstrak_tokens</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_Tokens&#39;</span><span class="p">]</span>
+<span class="n">abstrak_tokens</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      [sistem, informasi, akademik, siakad, sistem, ...
+1      [berjalannya, koneksi, jaringan, komputer, lan...
+2      [web, server, perangkat, lunak, server, berfun...
+3      [penjadwalan, kuliah, perguruan, kompleks, per...
+4      [seiring, perkembangan, teknologi, didunia, mu...
+                             ...                        
+853    [investasi, saham, memiliki, resiko, kerugian,...
+854    [information, retrieval, ir, pengambilan, info...
+855    [klasifikasi, citra, proses, pengelompokan, pi...
+856    [identifikasi, atribut, pejalan, kaki, salah, ...
+857    [topik, deteksi, objek, menarik, perhatian, pe...
+Name: Abstrak_Tokens, Length: 858, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="steaming">
+<h3>Steaming<a class="headerlink" href="#steaming" title="Permalink to this heading">#</a></h3>
+<p>mengembalikan kata ke kata dasar</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>sastrawi
+
+<span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">41.0/209.7 kB</span> <span class=" -Color -Color-Red">1.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">204.8/209.7 kB</span> <span class=" -Color -Color-Red">3.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">3.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: sastrawi
+Successfully installed sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+
+<span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_stemmed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">abstrak_tokens</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-21-00094dc05ae0&gt;</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_stemmed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">abstrak_tokens</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">])</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4769</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4770</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4771</span><span class="sd">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4772</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4773</span><span class="sd">     def _reduce(</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1121</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="sd">         # self.f is Callable</span>
+<span class="ne">-&gt; </span><span class="mi">1123</span><span class="sd">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1124</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="sd">     def agg(self):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd">             else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span><span class="sd">                 values = obj.astype(object)._values</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span><span class="sd">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span><span class="sd">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span><span class="sd">                     f,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/_libs/lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">&lt;ipython-input-21-00094dc05ae0&gt;</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(tokens)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> stemmer = factory.create_stemmer()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> </span>
+<span class="ne">----&gt; </span><span class="mi">4</span><span class="sd"> data_skripsi[&#39;Abstrak_stemmed&#39;] = abstrak_tokens.apply(lambda tokens: [stemmer.stem(word) for word in tokens])</span>
+
+<span class="nn">&lt;ipython-input-21-00094dc05ae0&gt;</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> stemmer = factory.create_stemmer()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> </span>
+<span class="ne">----&gt; </span><span class="mi">4</span><span class="sd"> data_skripsi[&#39;Abstrak_stemmed&#39;] = abstrak_tokens.apply(lambda tokens: [stemmer.stem(word) for word in tokens])</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/CachedStemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd">                 stems.append(self.cache.get(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span><span class="sd">             else:</span>
+<span class="ne">---&gt; </span><span class="mi">20</span><span class="sd">                 stem = self.delegatedStemmer.stem(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span><span class="sd">                 self.cache.set(word, stem)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="sd">                 stems.append(stem)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Stemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="sd">         for word in words:</span>
+<span class="ne">---&gt; </span><span class="mi">27</span><span class="sd">             stems.append(self.stem_word(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span><span class="sd">         return &#39; &#39;.join(stems)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Stemmer.py</span> in <span class="ni">stem_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             return self.stem_plural_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="sd">         else:</span>
+<span class="ne">---&gt; </span><span class="mi">36</span><span class="sd">             return self.stem_singular_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="sd">     def is_plural(self, word):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Stemmer.py</span> in <span class="ni">stem_singular_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Stem</span> <span class="n">a</span> <span class="n">singular</span> <span class="n">word</span> <span class="n">to</span> <span class="n">its</span> <span class="n">common</span> <span class="n">stem</span> <span class="n">form</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s2">         context = Context(word, self.dictionary, self.visitor_provider)</span>
+<span class="ne">---&gt; </span><span class="mi">84</span><span class="s2">         context.execute()</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s2">         return context.result</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">execute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">         #step 1 - 5</span>
+<span class="ne">---&gt; </span><span class="mi">37</span><span class="s2">         self.start_stemming_process()</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">         #step 6</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         #step 4, 5</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">         self.remove_prefixes()</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             return</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2">         for i in range(3):</span>
+<span class="ne">---&gt; </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">         removalCount = len(self.removals)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="s2">     def accept(self, visitor):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span><span class="s2">         visitor.visit(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="s2">     def accept_visitors(self, visitors):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">         for disambiguator in self.disambiguators:</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2">             result = disambiguator.disambiguate(context.current_word)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span><span class="s2">             if context.dictionary.contains(result):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2">                 break</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="s2"> </span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_skripsi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abstrak_stemmed</span> <span class="o">=</span> <span class="n">data_skripsi</span><span class="p">[</span><span class="s1">&#39;Abstrak_stemmed&#39;</span><span class="p">]</span>
+<span class="n">abstrak_stemmed</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="vector-space-model-vsm">
+<h2>Vector Space Model (VSM)<a class="headerlink" href="#vector-space-model-vsm" title="Permalink to this heading">#</a></h2>
+<section id="one-hot-encoder">
+<h3>One Hot Encoder<a class="headerlink" href="#one-hot-encoder" title="Permalink to this heading">#</a></h3>
+<p>Pada one-hot encoding, setiap kategori dalam variabel dikonversi menjadi vektor biner (seringkali 0 dan 1), di mana setiap kategori diwakili oleh satu elemen yang bernilai 1 dan elemen lainnya bernilai 0. Ini memungkinkan model machine learning untuk memproses dan memahami variabel kategori sebagai fitur numerik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MultiLabelBinarizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat DataFrame kosong dengan kolom sesuai kata unik</span>
+<span class="n">kata_unik</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">abstrak_stemmed</span><span class="p">:</span>
+  <span class="n">kata_unik</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="n">kata_unik_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">kata_unik</span><span class="p">)</span> <span class="c1">#menjadikan ke list</span>
+<span class="n">kata_unik_list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jumlah_kata_unik</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">kata_unik_list</span><span class="p">)</span>
+<span class="n">kata_abstrak</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_abstrak</span><span class="p">)</span>
+
+<span class="n">jumlah_kata_abstrak</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">kata_abstrak</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jumlah kata unik&#39;</span><span class="p">,</span> <span class="n">jumlah_kata_unik</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;jumlah kata abstrak&#39;</span><span class="p">,</span> <span class="n">jumlah_kata_abstrak</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_baru</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">kata_unik_list</span><span class="p">)</span>
+
+<span class="c1"># Mengisi DataFrame baru dengan data abstrak_stemmed secara manual</span>
+<span class="k">for</span> <span class="n">tokens</span> <span class="ow">in</span> <span class="n">abstrak_stemmed</span><span class="p">:</span>
+    <span class="n">row_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">kata_unik_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
+            <span class="n">row_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">row_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df_baru</span> <span class="o">=</span> <span class="n">df_baru</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">row_data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">kata_unik_list</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df_baru</span>
+<span class="n">data_abstrak_encoded</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_abstrak</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">]),</span> <span class="n">df_baru</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data_abstrak_encoded</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # DataFrame yang berisi hasil one-hot encoding dari kolom &quot;data_abstrak,&quot; dan setiap kolom dalam encoder mewakili satu token atau kata dalam abstrak.</span>
+<span class="c1"># encoder  = pd.get_dummies(abstrak_stemmed.apply(pd.Series).stack()).sum(level=0)</span>
+<span class="c1"># encoder = encoder.astype(int)</span>
+
+<span class="c1"># # DataFrame yang menggabungkan data asli (kolom &quot;data_abstrak&quot;) dengan hasil one-hot encoding (kolom-kolom dari encoder).</span>
+<span class="c1"># data_abstrak_encoded = pd.concat([abstrak_stemmed, encoder], axis=1)</span>
+
+<span class="c1"># data_abstrak_encoded</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cetak csv</span>
+<span class="n">data_abstrak_encoded</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;OneHotEncoder_data_abstrak.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="temr-frequency">
+<h3>Temr Frequency<a class="headerlink" href="#temr-frequency" title="Permalink to this heading">#</a></h3>
+<p>Term Frequency (TF), dalam konteks pemrosesan bahasa alami (Natural Language Processing - NLP) atau informasi teks, adalah metrik yang mengukur seberapa sering suatu kata atau term muncul dalam dokumen atau teks tertentu. Hasil dari perhitungan TF adalah skor yang menggambarkan seberapa sering suatu kata atau term muncul dalam dokumen tertentu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menggabungkan kata-kata dalam kolom &#39;stemmed_tokens&#39; menjadi teks</span>
+<span class="n">data_abstrak_text</span> <span class="o">=</span> <span class="n">abstrak_stemmed</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+
+<span class="c1"># Inisialisasi CountVectorizer</span>
+<span class="n">count_vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+
+<span class="c1"># Menghitung Term Frequency (TF) dari kolom &#39;data_abstrak_text&#39;</span>
+<span class="n">tf_matrix</span> <span class="o">=</span> <span class="n">count_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_abstrak_text</span><span class="p">)</span>
+
+<span class="c1"># Membuat DataFrame dari hasil perhitungan TF</span>
+<span class="n">data_abstrak_tf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">count_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+
+<span class="c1"># Menambahkan kolom &#39;stemmed_tokens&#39; ke dalam DataFrame hasil TF</span>
+<span class="n">data_abstrak_tf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;stemmed_tokens&#39;</span><span class="p">,</span><span class="n">data_abstrak</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil Term Frequency (TF)</span>
+<span class="n">data_abstrak_tf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hitung</span> <span class="o">=</span> <span class="n">data_abstrak_tf</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">non_zero</span> <span class="o">=</span> <span class="n">hitung</span><span class="p">[</span><span class="n">hitung</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hitung</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">non_zero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_abstrak_tf</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Term Frequensi_data_abstrak.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="log-frequency">
+<h3>Log Frequency<a class="headerlink" href="#log-frequency" title="Permalink to this heading">#</a></h3>
+<p>Logarithmic Frequency (Log Freq) adalah metode yang digunakan dalam analisis teks dan pemrosesan bahasa alami (Natural Language Processing - NLP) untuk mengukur frekuensi kata atau term dalam dokumen atau teks dengan skala logaritmik.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menggabungkan token-token dalam setiap abstrak menjadi satu teks abstrak.</span>
+<span class="n">data_abstrak_text_for_lf</span> <span class="o">=</span> <span class="n">data_abstrak</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+
+<span class="c1"># Menggunakan CountVectorizer untuk menghitung Term Frequency (TF) dari setiap kata dalam abstrak.</span>
+<span class="n">count_vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">tf_matrix</span> <span class="o">=</span> <span class="n">count_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_abstrak_text</span><span class="p">)</span>
+
+<span class="c1"># Mengambil daftar kata-kata (tokens) yang digunakan sebagai fitur dalam TF.</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">count_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Mengambil nilai-nilai TF dalam bentuk matriks array.</span>
+<span class="n">tf_values</span> <span class="o">=</span> <span class="n">tf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+<span class="c1"># Menggunakan logaritma natural (logaritma alami) untuk menghitung Log Frequency (Log Freq) dari nilai TF.</span>
+<span class="n">log_tf_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">tf_values</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Membuat DataFrame yang berisi nilai Log Freq, dengan kolom-kolom yang sesuai dengan kata-kata.</span>
+<span class="n">log_tf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">log_tf_values</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">tokens</span><span class="p">)</span>
+
+<span class="c1"># Menggabungkan DataFrame data_abstrak (abstrak asli) dengan DataFrame log_tf_df (Log Freq).</span>
+<span class="n">data_abstrak_log_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data_abstrak</span><span class="p">,</span> <span class="n">log_tf_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">data_abstrak_log_freq</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hitung</span> <span class="o">=</span> <span class="n">data_abstrak_log_freq</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">non_zero</span> <span class="o">=</span> <span class="n">hitung</span><span class="p">[</span><span class="n">hitung</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hitung</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">non_zero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_abstrak_log_freq</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;LogFreq_data_abstrak.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tf-idf">
+<h3>TF IDF<a class="headerlink" href="#tf-idf" title="Permalink to this heading">#</a></h3>
+<p>Pentingnya Kata di Seluruh Koleksi Dokumen (IDF - Inverse Document Frequency): Ini berarti seberapa unik atau langka kata itu dalam semua dokumen yang ada. Kata-kata umum seperti “dan” atau “atau” memiliki skor IDF yang rendah karena muncul di hampir semua dokumen. Kata-kata yang langka atau spesifik dalam beberapa dokumen akan memiliki skor IDF yang tinggi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_abstrak_text</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="n">data_abstrak_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">terms</span><span class="p">)</span>
+<span class="n">data_abstrak_tfidf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Abstrak&#39;</span><span class="p">,</span> <span class="n">data_abstrak_text</span><span class="p">)</span>
+
+<span class="n">data_abstrak_tfidf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_abstrak_tfidf</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;TFIDF_data_abstrak.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nilai_tidak_nol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">data_abstrak_tfidf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah nilai tidak nol dalam DataFrame:&quot;</span><span class="p">,</span> <span class="n">nilai_tidak_nol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Crawling%20Web.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>CRAWLING DATA PTA TRUNOJOYO</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Reduksi%20Dimensi%20dengan%20LDA%20dan%20K-Mean%20Clustering.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Reduksi Dimensi dengan Menggunakan Latent Dirichlet Allocation (LDA)</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi"><strong>Normalisasi</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-data"><strong>Cleaning data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-data-null">Menghapus data Null</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghapus-karakter-tidak-perlu-punctuation">Menghapus Karakter tidak perlu (Punctuation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword">Stopword</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">Tokenisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steaming">Steaming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-model-vsm">Vector Space Model (VSM)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoder">One Hot Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temr-frequency">Temr Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-frequency">Log Frequency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF IDF</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

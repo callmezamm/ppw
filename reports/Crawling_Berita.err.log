@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+datas = []
+berita_ke = 0
+for page in range(1,21):
+    url = f'https://indotimes.net/category/sport/page/{page}/'
+    ge = req.get(url).text
+    sop = bs(ge,'lxml')
+    list_berita = sop.find('div',class_='jeg_inner_content')
+    artikel = list_berita.find_all('article')
+    print(f"============ anda berada di halaman {page}===================")
+    for x in artikel:
+        title = x.find('h3').text
+        title = title.strip()
+        link = x.find('h3').find('a')['href']
+        ge_ = req.get(link).text
+        sop_ = bs(ge_,'lxml')
+        news = sop_.find_all('div', class_='entry-content no-share')
+        berita_ke += 1
+        print(f"================ Berita ke {berita_ke}=======================")
+        print("Judul =", title)
+        print("Link = ",link)
+        print("Label = Olahraga")
+        for x in news:
+            news_full = ""
+            paragraphs = x.find_all('p')
+            for paragraph in paragraphs:
+                news_full += paragraph.get_text()
+            news_full = re.sub(r'[^\x00-\x7F]+', '', news_full)
+            datas.append({
+              'Judul': title,
+              'Berita': news_full,
+              'Label': 'Olahraga'
+            })
+------------------
+
+----- stdout -----
+============ anda berada di halaman 1===================
+----- stdout -----
+================ Berita ke 1=======================
+Judul = Bournemouth vs Liverpool Berakhir Manis: Si Merah Lolos ke 8 Besar
+Link =  https://indotimes.net/sport/bournemouth-vs-liverpool/
+Label = Olahraga
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-2-c88895a32570>[0m in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m     25[0m             [0;32mfor[0m [0mparagraph[0m [0;32min[0m [0mparagraphs[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     26[0m                 [0mnews_full[0m [0;34m+=[0m [0mparagraph[0m[0;34m.[0m[0mget_text[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 27[0;31m             [0mnews_full[0m [0;34m=[0m [0mre[0m[0;34m.[0m[0msub[0m[0;34m([0m[0;34mr'[^\x00-\x7F]+'[0m[0;34m,[0m [0;34m''[0m[0;34m,[0m [0mnews_full[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     28[0m             datas.append({
+[1;32m     29[0m               [0;34m'Judul'[0m[0;34m:[0m [0mtitle[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 're' is not defined
+
