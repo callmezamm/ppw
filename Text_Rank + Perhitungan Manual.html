@@ -1,0 +1,1814 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Text Rank untuk mencari kata kunci data berita &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Text_Rank + Perhitungan Manual';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UAS PPW" href="UAS%20PPW.html" />
+    <link rel="prev" title="Text Rank untuk mencari kata kunci data berita" href="Text_Rank.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">tugas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Crawling%20Web.html"><strong>CRAWLING DATA PTA TRUNOJOYO</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Normalisasi%20Teks.html"><strong>NORMALISASI TEKS</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reduksi%20Dimensi%20dengan%20LDA%20dan%20K-Mean%20Clustering.html"><strong>Reduksi Dimensi dengan Menggunakan Latent Dirichlet Allocation (LDA)</strong></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="UTS_PPW.html"><strong>UTS PENCARIAN DAN PENAMBANGAN DATA</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling_Berita.html"><strong>Tugas Crawling Berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Text_Rank.html"><strong>Text Rank untuk mencari kata kunci data berita</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Text Rank untuk mencari kata kunci data berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS%20PPW.html"><strong>UAS PPW</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FText_Rank + Perhitungan Manual.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Text_Rank + Perhitungan Manual.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Text Rank untuk mencari kata kunci data berita</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambil-data-berita"><strong>Ambil data berita</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi"><strong>Normalisasi</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-data-kosong"><strong>Cek data kosong</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation"><strong>Punctuation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword"><strong>Stopword</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi"><strong>Tokenisasi</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gabung-hasil-tokenizing"><strong>Gabung Hasil Tokenizing</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#term-freq"><strong>Term Freq</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-occurance-matrics"><strong>Co-Occurance Matrics</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-graph-co-occurance"><strong>Membuat Graph Co-Occurance</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality"><strong>Centrality</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality"><strong>Closeness Centrality</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merangking-kata-kunci">merangking kata kunci</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meranking-node-dari-centrality"><strong>Meranking node dari centrality</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-kata-penting-berdasarkan-ranking"><strong>Menentukan Kata penting berdasarkan ranking</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank"><strong>Page Rank</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-page-rank">Perhitungan Manual Page Rank</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-Langkah</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-rumus">Algoritma (Rumus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#inisiasi-kalimat">1. Inisiasi Kalimat</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#term-vector">2. Term Vector</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#co-ocurrence-matrix">3. co-ocurrence matrix</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#graff">4. Graff</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-text-rank">5. menghitung text rank</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-3-kata-kunci-teratas">6. mengambil 3 kata kunci teratas</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-dengan-library">7. perbandingan dengan library</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meranking-kata-kunci">meranking kata kunci</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merangking-node-dari-page-rank"><strong>Merangking Node dari Page Rank</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Menentukan Kata Penting Berdasarkan Ranking</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepocessing-data-ringkasan"><strong>Prepocessing data ringkasan</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-data"><strong>Cleaning data</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Stopword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizer">Tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-data">TF-IDF DATA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabung-tf-idf-dengan-label">Menggabung TF-IDF dengan Label</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random Forest</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">Evaluasi Model</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="text-rank-untuk-mencari-kata-kunci-data-berita">
+<h1><strong>Text Rank untuk mencari kata kunci data berita</strong><a class="headerlink" href="#text-rank-untuk-mencari-kata-kunci-data-berita" title="Permalink to this heading">#</a></h1>
+<section id="ambil-data-berita">
+<h2><strong>Ambil data berita</strong><a class="headerlink" href="#ambil-data-berita" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="o">%</span><span class="k">cd</span> /content/
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;data_berita&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">gdown</span>
+<span class="c1"># download data</span>
+
+<span class="n">nama_data</span> <span class="o">=</span> <span class="s1">&#39;/content/data_berita/data_berita.csv&#39;</span>
+<span class="n">gdown</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://drive.google.com/uc?id=1vu67IeDIAWTCH9hk4C39DrH9JKXHpUVi&#39;</span><span class="p">,</span> <span class="n">nama_data</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileExistsError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-c8125b64ee4c&gt;</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;cd&#39;</span><span class="p">,</span> <span class="s1">&#39;/content/&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;data_berita&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">gdown</span>
+
+<span class="ne">FileExistsError</span>: [Errno 17] File exists: &#39;data_berita&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data_berita</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/data_berita/data_berita.csv&#39;</span><span class="p">)</span>
+<span class="n">data_berita</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="normalisasi">
+<h2><strong>Normalisasi</strong><a class="headerlink" href="#normalisasi" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cek-data-kosong">
+<h3><strong>Cek data kosong</strong><a class="headerlink" href="#cek-data-kosong" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cek apakah ada data yang kosong</span>
+<span class="n">data_berita</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="punctuation">
+<h3><strong>Punctuation</strong><a class="headerlink" href="#punctuation" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s,.?!]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stopword">
+<h3><strong>Stopword</strong><a class="headerlink" href="#stopword" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi kamus stop words dari NLTK</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>  <span class="c1"># Inisialisasi kamus stop words di luar loop</span>
+<span class="c1"># Fungsi untuk menghapus stop words</span>
+<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># Periksa apakah teks adalah string</span>
+        <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># Mengembalikan string kosong untuk nilai non-string</span>
+
+<span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_Stopword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+<span class="n">data_berita</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tokenisasi">
+<h3><strong>Tokenisasi</strong><a class="headerlink" href="#tokenisasi" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_Stopword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">)</span>
+<span class="n">data_berita</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gabung-hasil-tokenizing">
+<h3><strong>Gabung Hasil Tokenizing</strong><a class="headerlink" href="#gabung-hasil-tokenizing" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;full_text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+<span class="n">data_berita</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="term-freq">
+<h2><strong>Term Freq</strong><a class="headerlink" href="#term-freq" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf_result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">])):</span>
+  <span class="n">tf_vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+  <span class="n">tf_matrix</span> <span class="o">=</span> <span class="n">tf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+  <span class="n">terms</span> <span class="o">=</span> <span class="n">tf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+  <span class="n">berita_tf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tf_matrix</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">terms</span><span class="p">)</span>
+  <span class="n">tf_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">berita_tf</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tf_result</span><span class="p">[:</span><span class="mi">10</span><span class="p">])):</span>
+  <span class="n">tf_show</span> <span class="o">=</span> <span class="n">tf_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;=====================Berita ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">======================&quot;</span><span class="p">)</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">tf_show</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="co-occurance-matrics">
+<h2><strong>Co-Occurance Matrics</strong><a class="headerlink" href="#co-occurance-matrics" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co_occurrence_df_all</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">co_occurrence_matrix_all</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tf_result</span><span class="p">)):</span>
+  <span class="c1"># Membuat Co-occurrence Matrix</span>
+  <span class="n">co_occurrence_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">tf_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">tf_result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  <span class="c1"># Mengganti diagonal dengan nol (karena kita tidak ingin memperhitungkan kata dengan dirinya sendiri)</span>
+  <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">co_occurrence_matrix</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="c1"># mengambil columns</span>
+  <span class="n">terms</span> <span class="o">=</span> <span class="n">tf_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span>
+  <span class="c1"># Membuat DataFrame Co-occurrence</span>
+  <span class="n">co_occurrence_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">co_occurrence_matrix</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">terms</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">terms</span><span class="p">)</span>
+  <span class="n">co_occurrence_df_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">co_occurrence_df</span><span class="p">)</span>
+  <span class="n">co_occurrence_matrix_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">co_occurrence_matrix</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">co_occurrence_df_all</span><span class="p">[:</span><span class="mi">10</span><span class="p">])):</span>
+  <span class="n">co_occurrence_show</span> <span class="o">=</span> <span class="n">co_occurrence_df_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;=====================CO-Occurence ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">======================&quot;</span><span class="p">)</span>
+  <span class="n">display</span><span class="p">(</span><span class="n">co_occurrence_show</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="membuat-graph-co-occurance">
+<h3><strong>Membuat Graph Co-Occurance</strong><a class="headerlink" href="#membuat-graph-co-occurance" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graf_results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">treshold</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">co_occurrence_df_all</span><span class="p">)):</span>
+    <span class="n">graf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>  <span class="c1"># Membuat objek Graf</span>
+    <span class="n">co_occurrence</span> <span class="o">=</span> <span class="n">co_occurrence_df_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">koloms</span> <span class="o">=</span> <span class="n">co_occurrence</span><span class="o">.</span><span class="n">columns</span>
+    <span class="n">matrix_cooccurrence</span> <span class="o">=</span> <span class="n">co_occurrence_matrix_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_adjacency</span><span class="p">(</span><span class="n">co_occurrence</span><span class="p">)</span>
+    <span class="n">graf_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">G</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Graf </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graf_results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">treshold</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">co_occurrence_df_all</span><span class="p">)):</span>
+  <span class="c1"># print(&#39;Dokumen ke&#39;,i)</span>
+  <span class="n">graf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>  <span class="c1"># Instantiate as a Graph object</span>
+  <span class="n">co_occurrence</span> <span class="o">=</span> <span class="n">co_occurrence_df_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">#mengambil hasil coocurence per indeks yang disimpan array</span>
+  <span class="n">koloms</span> <span class="o">=</span> <span class="n">co_occurrence</span><span class="o">.</span><span class="n">columns</span> <span class="c1">#mengambil nama kolom saja dari coocurence array indeks</span>
+  <span class="n">matrix_coocurrence</span> <span class="o">=</span> <span class="n">co_occurrence_matrix_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">#mengambil matrix coocurencenya</span>
+
+  <span class="k">for</span> <span class="n">i_koloms</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">koloms</span><span class="p">)):</span> <span class="c1">#perulangan setiap dari panjang kolom dari coocurence</span>
+      <span class="k">for</span> <span class="n">j_koloms</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i_koloms</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">koloms</span><span class="p">)):</span> <span class="c1">#perulangan dari setiap panjang kolom + 1, maksudna kolom indeks ke dua</span>
+        <span class="n">bobot</span> <span class="o">=</span> <span class="n">matrix_coocurrence</span><span class="p">[</span><span class="n">i_koloms</span><span class="p">,</span><span class="n">j_koloms</span><span class="p">]</span> <span class="c1">#mencari bobot dengan setiap kolom</span>
+        <span class="k">if</span> <span class="n">bobot</span> <span class="o">&gt;</span> <span class="n">treshold</span><span class="p">:</span>
+          <span class="n">graf</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">koloms</span><span class="p">[</span><span class="n">i_koloms</span><span class="p">],</span> <span class="n">koloms</span><span class="p">[</span><span class="n">j_koloms</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">matrix_coocurrence</span><span class="p">[</span><span class="n">i_koloms</span><span class="p">,</span> <span class="n">j_koloms</span><span class="p">])</span>
+  <span class="n">graf_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">graf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menampilkan graf</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[:</span><span class="mi">3</span><span class="p">])):</span>
+  <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1">## Menentukan posisi/koordinat simpul</span>
+  <span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_edge_attributes</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span> <span class="c1">##mendapatkan atribut berbobot (&#39;weight&#39;) dari setiap sisi dalam graf.</span>
+
+  <span class="c1"># Menentukan ukuran canvas</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+  <span class="c1"># Menggambar graf dengan ukuran canvas yang diperbesar</span>
+  <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+  <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;====== Dokumen ke - </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> ===========&quot;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="centrality">
+<h2><strong>Centrality</strong><a class="headerlink" href="#centrality" title="Permalink to this heading">#</a></h2>
+<section id="closeness-centrality">
+<h3><strong>Closeness Centrality</strong><a class="headerlink" href="#closeness-centrality" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">closeness_centrality_centrality_result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">graf_results</span><span class="p">)):</span>
+  <span class="c1"># print(f&#39;========= document ke-{i} ===============&#39;)</span>
+  <span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">#menjadikan graf setiap index list diclosness</span>
+  <span class="c1"># print(centrality)</span>
+  <span class="c1"># print(f&#39;Text rank score : {centrality}&#39;)</span>
+  <span class="n">closeness_centrality_centrality_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">centrality</span><span class="p">)</span>
+  <span class="c1"># print(i)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menampilkan centrality</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">closeness_centrality_centrality_result</span><span class="p">[:</span><span class="mi">5</span><span class="p">])):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;================== Dokumen ke - </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> ==================&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Closeness Centrality score : </span><span class="si">{</span><span class="n">closeness_centrality_centrality_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="merangking-kata-kunci">
+<h4>merangking kata kunci<a class="headerlink" href="#merangking-kata-kunci" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_closeness_all</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">closeness_centrality_centrality_result</span><span class="p">)):</span>
+  <span class="n">sorted_closeness</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">closeness_centrality_centrality_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+  <span class="n">sorted_closeness_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_closeness</span><span class="p">)</span>
+
+<span class="n">sorted_closeness_all</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat_tertinggi_all</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_closeness_all</span><span class="p">)):</span>
+    <span class="n">kalimat_tertinggi</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">max_key</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">max_value</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_closeness_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kalimat_tertinggi</span> <span class="ow">and</span> <span class="p">(</span><span class="n">max_value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">):</span>
+                <span class="n">max_key</span> <span class="o">=</span> <span class="n">key</span>
+                <span class="n">max_value</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">if</span> <span class="n">max_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kalimat_tertinggi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_key</span><span class="p">)</span>
+
+    <span class="n">kalimat_tertinggi_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat_tertinggi_all</span><span class="p">)):</span>
+  <span class="n">kata_kunci</span> <span class="o">=</span> <span class="n">kalimat_tertinggi_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kata Kunci Dokumen ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> adalah </span><span class="si">{</span><span class="n">kata_kunci</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="meranking-node-dari-centrality">
+<h4><strong>Meranking node dari centrality</strong><a class="headerlink" href="#meranking-node-dari-centrality" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengambil kalimat sesuai kata dari centrality</span>
+<span class="n">result_skor</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index_centrality</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">closeness_centrality_centrality_result</span><span class="p">)):</span>
+  <span class="c1"># print(index_centrality)</span>
+  <span class="n">current_skor</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">sentences</span> <span class="ow">in</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">][</span><span class="n">index_centrality</span><span class="p">]:</span>
+    <span class="n">skor_kata</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentences</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">pin_centrality</span> <span class="o">=</span> <span class="n">closeness_centrality_centrality_result</span><span class="p">[</span><span class="n">index_centrality</span><span class="p">]</span>
+    <span class="c1"># print(words)</span>
+    <span class="n">panjang_words</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="c1"># print(panjang_words)</span>
+    <span class="k">for</span> <span class="n">i_word</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">panjang_words</span><span class="p">):</span>
+      <span class="c1"># print(words[i_word])</span>
+      <span class="k">if</span> <span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]</span> <span class="ow">in</span> <span class="n">pin_centrality</span><span class="p">:</span>
+        <span class="n">skor_kata</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pin_centrality</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">skor_kata</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">current_skor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">skor_kata</span><span class="p">)</span>
+  <span class="n">result_skor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_skor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># jumlah bobot centrality dari setiap kata dalam kalimat</span>
+<span class="n">result_bobot_kalimat</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_skor</span><span class="p">)):</span>
+    <span class="n">current_bobot</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_skor</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+        <span class="n">bobot_kalimat</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">result_skor</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">current_bobot</span><span class="p">[</span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">bobot_kalimat</span>
+
+    <span class="n">result_bobot_kalimat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_bobot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_bobot_kalimat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menentukan-kata-penting-berdasarkan-ranking">
+<h4><strong>Menentukan Kata penting berdasarkan ranking</strong><a class="headerlink" href="#menentukan-kata-penting-berdasarkan-ranking" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># merangking kalimat tertinggi berdasarkan perhitungan sebelumnya</span>
+<span class="n">kalimat_tertinggi</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_bobot_kalimat</span><span class="p">)):</span>
+  <span class="c1"># Mengurutkan dictionary berdasarkan nilai (dari besar ke kecil)</span>
+  <span class="n">sorted_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">result_bobot_kalimat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+  <span class="c1"># Mengambil 5 nilai teratas beserta key-nya</span>
+  <span class="n">top_5_keys</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">sorted_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]}</span>
+  <span class="c1"># Menggabungkan key menjadi satu string</span>
+  <span class="n">result_string</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">top_5_keys</span><span class="p">)</span>
+
+  <span class="n">kalimat_tertinggi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_string</span><span class="p">)</span>
+
+<span class="c1"># tampilkan</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">)):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;===== Dokumen </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> ======&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita_ringkasan</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">)):</span>
+  <span class="n">data_berita_ringkasan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+      <span class="s1">&#39;Summary&#39;</span> <span class="p">:</span> <span class="n">kalimat_tertinggi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+      <span class="s1">&#39;Label&#39;</span> <span class="p">:</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+  <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="c1"># Menyimpan data dalam bentuk CSV</span>
+<span class="n">csv_filename</span> <span class="o">=</span> <span class="s1">&#39;data_berita_closeness_centrality.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Summary&#39;</span><span class="p">,</span> <span class="s1">&#39;Label&#39;</span><span class="p">]</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">fieldnames</span><span class="p">)</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data_berita_ringkasan</span><span class="p">:</span>
+        <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data telah disimpan dalam file </span><span class="si">{</span><span class="n">csv_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="page-rank">
+<h3><strong>Page Rank</strong><a class="headerlink" href="#page-rank" title="Permalink to this heading">#</a></h3>
+<p>tugas tambahan perhitungan manual dengan page rank</p>
+</section>
+<section id="perhitungan-manual-page-rank">
+<h3>Perhitungan Manual Page Rank<a class="headerlink" href="#perhitungan-manual-page-rank" title="Permalink to this heading">#</a></h3>
+<p><strong>TextRank</strong> adalah algoritma pemeringkatan dokumen yang mirip dengan PageRank, tetapi diadaptasi untuk mengurutkan kalimat berdasarkan relevansinya dalam suatu dokumen. Algoritma ini dapat digunakan untuk mengekstrak kalimat-kalimat penting dari suatu teks.</p>
+<section id="langkah-langkah">
+<h4>Langkah-Langkah<a class="headerlink" href="#langkah-langkah" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Preprocessing data dan tokenisasi: Dokumen teks dibagi menjadi token atau kata-kata, dan dilakukan pembersihan teks untuk menghilangkan karakter khusus, tanda baca, dan langkah-langkah preprocessing lainnya.</p></li>
+<li><p>Vektorisasi: Setiap kata dalam dokumen direpresentasikan sebagai vektor dalam ruang multidimensional. disini menggunakan Term Freq</p></li>
+<li><p>Hitung Simpul simmilarity dan graf</p></li>
+<li><p>Hitung textrank</p></li>
+<li><p>Urutkan</p></li>
+</ol>
+<p>Berikut adalah rumus untuk TextRank:</p>
+</section>
+<section id="algoritma-rumus">
+<h4>Algoritma (Rumus)<a class="headerlink" href="#algoritma-rumus" title="Permalink to this heading">#</a></h4>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[
+Score(V_i) = (1 - d) + d \times \sum_{j \in In(Vi)} \frac{w_{ji}}{\sum_{k \in Out(V_j)} w_{jk}} \times WScore(V_j)
+\]</div>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li><p>Score(Vi) adalah skor simpul Vi</p></li>
+<li><p>d adalah faktor damping (dalam TextRank biasanya diatur antara 0.1 hingga 0.3)</p></li>
+<li><p>In Vi adalah himpunan simpul yang memiliki tautan ke Vi</p></li>
+<li><p>Out(Vj) adalah himpunan simpul yang dihubungkan dari Vj</p></li>
+<li><p>Wji adalah bobot dari tautan Vj ke Vi</p></li>
+</ul>
+</div></blockquote>
+<p>Dengan mengulangi rumus ini melalui beberapa iterasi, nilai skor TextRank untuk setiap kata akan konvergen ke nilai yang mencerminkan tingkat kepentingan kata-kata dalam teks. Pada akhirnya, kata-kata dengan skor TextRank tertinggi dianggap sebagai kata kunci atau kata-kata yang paling penting dalam teks tersebut.</p>
+<section id="inisiasi-kalimat">
+<h5>1. Inisiasi Kalimat<a class="headerlink" href="#inisiasi-kalimat" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat_contoh</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nizam main layangan&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="term-vector">
+<h5>2. Term Vector<a class="headerlink" href="#term-vector" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf_vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">tf_matrix_manual</span> <span class="o">=</span> <span class="n">tf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">kalimat_contoh</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">tf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="n">berita_tf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tf_matrix_manual</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">terms</span><span class="p">)</span>
+<span class="n">berita_tf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Berita&#39;</span><span class="p">,</span> <span class="n">kalimat_contoh</span><span class="p">)</span>
+
+<span class="n">berita_tf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="co-ocurrence-matrix">
+<h5>3. co-ocurrence matrix<a class="headerlink" href="#co-ocurrence-matrix" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat Co-occurrence Matrix</span>
+<span class="n">co_occurrence_matrix_manual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">tf_matrix_manual</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">tf_matrix_manual</span><span class="p">)</span>
+
+<span class="c1"># Mengganti diagonal dengan nol (karena kita tidak ingin memperhitungkan kata dengan dirinya sendiri)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">co_occurrence_matrix_manual</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Membuat DataFrame Co-occurrence</span>
+<span class="n">co_occurrence_df_manual</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">co_occurrence_matrix_manual</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">terms</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">terms</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan DataFrame Co-occurrence</span>
+<span class="n">co_occurrence_df_manual</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">koloms</span> <span class="o">=</span> <span class="n">co_occurrence_df_manual</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">koloms</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="graff">
+<h5>4. Graff<a class="headerlink" href="#graff" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co_occurrence_matrix_manual</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil_graf_dokumen1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="n">treshold</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Menghitung bobot graph</span>
+<span class="k">for</span> <span class="n">i_koloms</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">koloms</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j_koloms</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i_koloms</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">koloms</span><span class="p">)):</span>
+        <span class="n">bobot_dokumen1</span> <span class="o">=</span> <span class="n">co_occurrence_matrix_manual</span><span class="p">[</span><span class="n">i_koloms</span><span class="p">,</span> <span class="n">j_koloms</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">bobot_dokumen1</span> <span class="o">&gt;</span> <span class="n">treshold</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Simpul </span><span class="si">{</span><span class="n">koloms</span><span class="p">[</span><span class="n">i_koloms</span><span class="p">]</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">koloms</span><span class="p">[</span><span class="n">j_koloms</span><span class="p">]</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">bobot_dokumen1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">koloms</span><span class="p">[</span><span class="n">i_koloms</span><span class="p">],</span> <span class="n">koloms</span><span class="p">[</span><span class="n">j_koloms</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">bobot_dokumen1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">masuk</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">in_degree</span><span class="p">())</span>
+<span class="n">keluar</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">out_degree</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Win&#39;</span><span class="p">,</span> <span class="n">masuk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Wout&#39;</span><span class="p">,</span> <span class="n">keluar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">masuk</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">in_degree</span><span class="p">())</span>
+<span class="n">keluar</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">out_degree</span><span class="p">())</span>
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="p">)</span>
+
+<span class="c1"># Mengakses kunci dari masuk dan keluar dictionaries</span>
+<span class="n">node_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">masuk</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># Buat mapping untuk label node</span>
+<span class="n">node_labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">koloms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="se">\n</span><span class="s2">In: </span><span class="si">{</span><span class="n">masuk</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">, Out: </span><span class="si">{</span><span class="n">keluar</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">node_keys</span><span class="p">)}</span>
+
+<span class="n">edge_labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_edge_attributes</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="c1"># Menggambar graf</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan graf</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menghitung-text-rank">
+<h5>5. menghitung text rank<a class="headerlink" href="#menghitung-text-rank" title="Permalink to this heading">#</a></h5>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[
+Score(V_i) = (1 - d) + d \times \sum_{j \in In(Vi)} \frac{w_{ji}}{\sum_{k \in Out(V_j)} w_{jk}} \times WScore(V_j)
+\]</div>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li><p>Score(Vi) adalah skor simpul Vi</p></li>
+<li><p>d adalah faktor damping (dalam TextRank biasanya diatur antara 0.1 hingga 0.3)</p></li>
+<li><p>In Vi adalah himpunan simpul yang memiliki tautan ke Vi</p></li>
+<li><p>Out(Vj) adalah himpunan simpul yang dihubungkan dari Vj</p></li>
+<li><p>Wji adalah bobot dari tautan Vj ke Vi</p></li>
+</ul>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung text rank</span>
+<span class="n">initial_value</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+<span class="n">ranks</span> <span class="o">=</span> <span class="p">{</span><span class="n">node</span><span class="p">:</span> <span class="n">initial_value</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">nodes</span><span class="p">()}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inisialisasi Score Awal : </span><span class="si">{</span><span class="n">ranks</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Edges : </span><span class="si">{</span><span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">damping_factor</span> <span class="o">=</span> <span class="mf">0.85</span>
+<span class="n">stopping</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">1e-4</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stopping</span><span class="p">):</span>
+    <span class="n">new_ranks</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;========== Iterasi Ke - </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> ==========&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+      <span class="n">rank_sum</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="n">operasi</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+      <span class="c1"># Menampilkan informasi out_sum dan win untuk setiap node dan neighbor</span>
+      <span class="n">out_sums_info</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="n">win</span> <span class="o">=</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">in_degree</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">)</span>
+
+      <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">predecessors</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="n">edge_weight</span> <span class="o">=</span> <span class="n">hasil_graf_dokumen1</span><span class="p">[</span><span class="n">neighbor</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span>
+        <span class="n">out_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="p">[</span><span class="n">neighbor</span><span class="p">][</span><span class="n">out_neighbor</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">out_neighbor</span> <span class="ow">in</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">successors</span><span class="p">(</span><span class="n">neighbor</span><span class="p">))</span>
+        <span class="n">rank_sum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">edge_weight</span> <span class="o">/</span> <span class="n">out_sum</span><span class="p">)</span> <span class="o">*</span> <span class="n">ranks</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span>
+        <span class="n">operasi</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">edge_weight</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">out_sum</span><span class="si">}</span><span class="s2">) * </span><span class="si">{</span><span class="n">ranks</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span><span class="si">}</span><span class="s2"> + &quot;</span>
+
+        <span class="c1"># Menambah informasi out_sum untuk setiap neighbor</span>
+        <span class="n">out_sums_info</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">out_neighbor</span><span class="p">:</span> <span class="n">hasil_graf_dokumen1</span><span class="p">[</span><span class="n">neighbor</span><span class="p">][</span><span class="n">out_neighbor</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">out_neighbor</span> <span class="ow">in</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">successors</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)}</span>
+
+      <span class="c1"># Jika operasi kosong, atur nilai operasi menjadi 0</span>
+      <span class="n">operasi</span> <span class="o">=</span> <span class="n">operasi</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="k">if</span> <span class="n">operasi</span> <span class="k">else</span> <span class="s1">&#39;0&#39;</span>
+
+      <span class="n">new_rank</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">damping_factor</span><span class="p">)</span> <span class="o">+</span> <span class="n">damping_factor</span> <span class="o">*</span> <span class="n">rank_sum</span>
+      <span class="n">new_ranks</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_rank</span>
+
+      <span class="c1"># Menampilkan informasi out_sum dan win pada setiap iterasi</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Win(</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">win</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Out_sums_info(</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">out_sums_info</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;W(</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">) = (1 - </span><span class="si">{</span><span class="n">damping_factor</span><span class="si">}</span><span class="s2">) + </span><span class="si">{</span><span class="n">damping_factor</span><span class="si">}</span><span class="s2"> * (</span><span class="si">{</span><span class="n">operasi</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">new_rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">()</span>
+
+    <span class="c1"># Periksa konvergensi</span>
+    <span class="n">convergence</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">new_ranks</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">-</span> <span class="n">ranks</span><span class="p">[</span><span class="n">node</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">tolerance</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">hasil_graf_dokumen1</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+    <span class="n">ranks</span> <span class="o">=</span> <span class="n">new_ranks</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New Score : </span><span class="si">{</span><span class="n">new_ranks</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">convergence</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Konvergensi tercapai pada iterasi ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mengambil-3-kata-kunci-teratas">
+<h5>6. mengambil 3 kata kunci teratas<a class="headerlink" href="#mengambil-3-kata-kunci-teratas" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ekstrak kata kunci teratas</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">full_text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">kalimat_contoh</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">kalimat_contoh</span>
+
+<span class="c1"># Menghitung nilai dari PageRank (TextRank)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">ranks</span>
+
+<span class="c1"># Dictionary untuk menyimpan skor tertinggi setiap kata</span>
+<span class="n">ranked_words_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">current_score</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ranked_words_dict</span> <span class="ow">or</span> <span class="n">current_score</span> <span class="o">&gt;</span> <span class="n">ranked_words_dict</span><span class="p">[</span><span class="n">word</span><span class="p">]:</span>
+        <span class="n">ranked_words_dict</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_score</span>
+
+<span class="c1"># Mengurutkan kata-kata berdasarkan skor tertinggi</span>
+<span class="n">ranked_words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(((</span><span class="n">score</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">ranked_words_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Memilih sejumlah w kata tertinggi</span>
+<span class="n">selected_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">ranked_words</span><span class="p">[:</span><span class="n">w</span><span class="p">]]</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+<span class="c1"># Menggabungkan kata-kata menjadi satu string terpisah dengan koma</span>
+<span class="n">keywords</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">selected_words</span><span class="p">)</span> <span class="k">if</span> <span class="n">selected_words</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="perbandingan-dengan-library">
+<h5>7. perbandingan dengan library<a class="headerlink" href="#perbandingan-dengan-library" title="Permalink to this heading">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(f&#39;Dokumen ke {index} : {full_text}&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s1"> Kata Kunci : </span><span class="si">{</span><span class="n">keywords</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TextRank Scores:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">score</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">ranked_words</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skor: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">, Kata: </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cen</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">hasil_graf_dokumen1</span><span class="p">)</span>
+<span class="n">cen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengurutkan dictionary berdasarkan nilai (values) dari yang terbesar</span>
+<span class="n">sorted_dict_cen</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">cen</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+<span class="c1"># Menampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_dict_cen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page_rank_centrality_result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">graf_results</span><span class="p">)):</span>
+  <span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">graf_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">#menjadikan graf setiap index list diclosness</span>
+  <span class="n">page_rank_centrality_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">centrality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menampilkan centrality</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">page_rank_centrality_result</span><span class="p">[:</span><span class="mi">5</span><span class="p">])):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;================== Dokumen ke - </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> ==================&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Closeness Centrality score : </span><span class="si">{</span><span class="n">page_rank_centrality_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="meranking-kata-kunci">
+<h4>meranking kata kunci<a class="headerlink" href="#meranking-kata-kunci" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_page_rank_all</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">page_rank_centrality_result</span><span class="p">)):</span>
+  <span class="n">sorted_page_rank</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">page_rank_centrality_result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+  <span class="n">sorted_page_rank_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_page_rank</span><span class="p">)</span>
+
+<span class="n">sorted_page_rank_all</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat_tertinggi_all</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_page_rank_all</span><span class="p">)):</span>
+    <span class="n">kalimat_tertinggi</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">max_key</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">max_value</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_page_rank_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kalimat_tertinggi</span> <span class="ow">and</span> <span class="p">(</span><span class="n">max_value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">):</span>
+                <span class="n">max_key</span> <span class="o">=</span> <span class="n">key</span>
+                <span class="n">max_value</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">if</span> <span class="n">max_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kalimat_tertinggi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">max_key</span><span class="p">)</span>
+
+    <span class="n">kalimat_tertinggi_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat_tertinggi_all</span><span class="p">)):</span>
+  <span class="n">kata_kunci</span> <span class="o">=</span> <span class="n">kalimat_tertinggi_all</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kata Kunci Dokumen ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> adalah </span><span class="si">{</span><span class="n">kata_kunci</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="merangking-node-dari-page-rank">
+<h4><strong>Merangking Node dari Page Rank</strong><a class="headerlink" href="#merangking-node-dari-page-rank" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_skor</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index_centrality</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">page_rank_centrality_result</span><span class="p">)):</span>
+  <span class="c1"># print(index_centrality)</span>
+  <span class="n">current_skor</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">sentences</span> <span class="ow">in</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">][</span><span class="n">index_centrality</span><span class="p">]:</span>
+    <span class="n">skor_kata</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentences</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">pin_centrality</span> <span class="o">=</span> <span class="n">page_rank_centrality_result</span><span class="p">[</span><span class="n">index_centrality</span><span class="p">]</span>
+    <span class="c1"># print(words)</span>
+    <span class="n">panjang_words</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="c1"># print(panjang_words)</span>
+    <span class="k">for</span> <span class="n">i_word</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">panjang_words</span><span class="p">):</span>
+      <span class="c1"># print(words[i_word])</span>
+      <span class="k">if</span> <span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]</span> <span class="ow">in</span> <span class="n">pin_centrality</span><span class="p">:</span>
+        <span class="n">skor_kata</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pin_centrality</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">skor_kata</span><span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">i_word</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">current_skor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">skor_kata</span><span class="p">)</span>
+  <span class="n">result_skor</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_skor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result_bobot_kalimat</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_skor</span><span class="p">)):</span>
+    <span class="n">current_bobot</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_skor</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+        <span class="n">bobot_kalimat</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">result_skor</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">current_bobot</span><span class="p">[</span><span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;berita_token&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">bobot_kalimat</span>
+
+    <span class="n">result_bobot_kalimat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_bobot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h4><strong>Menentukan Kata Penting Berdasarkan Ranking</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat_tertinggi</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result_bobot_kalimat</span><span class="p">)):</span>
+  <span class="c1"># Mengurutkan dictionary berdasarkan nilai (dari besar ke kecil)</span>
+  <span class="n">sorted_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">result_bobot_kalimat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+  <span class="c1"># Mengambil 5 nilai teratas beserta key-nya</span>
+  <span class="n">top_5_keys</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">sorted_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]}</span>
+  <span class="c1"># Menggabungkan key menjadi satu string</span>
+  <span class="n">result_string</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">top_5_keys</span><span class="p">)</span>
+
+  <span class="n">kalimat_tertinggi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_string</span><span class="p">)</span>
+
+<span class="c1"># tampilkan</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">)):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;===== Dokumen </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> ======&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_berita_ringkasan</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat_tertinggi</span><span class="p">)):</span>
+  <span class="n">data_berita_ringkasan</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+      <span class="s1">&#39;Summary&#39;</span> <span class="p">:</span> <span class="n">kalimat_tertinggi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+      <span class="s1">&#39;Label&#39;</span> <span class="p">:</span> <span class="n">data_berita</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+  <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="c1"># Menyimpan data dalam bentuk CSV</span>
+<span class="n">csv_filename</span> <span class="o">=</span> <span class="s1">&#39;data_berita_page_rank.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Summary&#39;</span><span class="p">,</span> <span class="s1">&#39;Label&#39;</span><span class="p">]</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">fieldnames</span><span class="p">)</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data_berita_ringkasan</span><span class="p">:</span>
+        <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data telah disimpan dalam file </span><span class="si">{</span><span class="n">csv_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="prepocessing-data-ringkasan">
+<h2><strong>Prepocessing data ringkasan</strong><a class="headerlink" href="#prepocessing-data-ringkasan" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># %cd /content/</span>
+<span class="c1"># os.mkdir(&#39;data_berita&#39;)</span>
+
+<span class="kn">import</span> <span class="nn">gdown</span>
+<span class="c1"># download data</span>
+
+<span class="n">nama_data</span> <span class="o">=</span> <span class="s1">&#39;/content/data_berita/data_berita_page_rank.csv&#39;</span>
+<span class="n">gdown</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;https://drive.google.com/uc?id=1U-1ynzXT0ScSnIc1XKv8lXQveFRvoV9V&#39;</span><span class="p">,</span> <span class="n">nama_data</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data_page_rank</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/data_berita/data_berita_page_rank.csv&#39;</span><span class="p">)</span>
+<span class="n">data_page_rank</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cleaning-data">
+<h3><strong>Cleaning data</strong><a class="headerlink" href="#cleaning-data" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_page_rank</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Punctuation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;ringkasan_punctuation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;Summary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># Menghilangkan angka dari kolom &#39;new_abstrak&#39;</span>
+<span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;ringkasan_punctuation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;ringkasan_punctuation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">data_page_rank</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Stopword<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library dan download nltk</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
+<span class="c1"># Inisialisasi kamus stop words dari NLTK</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>  <span class="c1"># Inisialisasi kamus stop words di luar loop</span>
+<span class="c1"># Fungsi untuk menghapus stop words</span>
+<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># Periksa apakah teks adalah string</span>
+        <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># Mengembalikan string kosong untuk nilai non-string</span>
+
+<span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;ringkasan_Stopword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;ringkasan_punctuation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+<span class="n">data_page_rank</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tokenizer">
+<h2>Tokenizer<a class="headerlink" href="#tokenizer" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_page_rank</span><span class="p">[</span><span class="s2">&quot;tokenizing&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;ringkasan_Stopword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_page_rank</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tf-idf-data">
+<h2>TF-IDF DATA<a class="headerlink" href="#tf-idf-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="n">data_page_rank_text</span> <span class="o">=</span> <span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;tokenizing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_page_rank_text</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="n">data_page_rank_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">terms</span><span class="p">)</span>
+<span class="n">data_page_rank_tfidf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Ringkasan&#39;</span><span class="p">,</span> <span class="n">data_page_rank_text</span><span class="p">)</span>
+
+<span class="n">data_page_rank_tfidf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menggabung-tf-idf-dengan-label">
+<h2>Menggabung TF-IDF dengan Label<a class="headerlink" href="#menggabung-tf-idf-dengan-label" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tfidf_label</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data_page_rank_tfidf</span><span class="p">,</span><span class="n">data_page_rank</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">tfidf_label</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modeling">
+<h2>Modeling<a class="headerlink" href="#modeling" title="Permalink to this heading">#</a></h2>
+<section id="naive-bayes">
+<h3>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">tfidf_label</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">tfidf_label</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">naive_bayes</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">naive_bayes</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">naive_bayes</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy_naiveBayes</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Akurasi model Naive Bayes: </span><span class="si">{</span><span class="n">accuracy_naiveBayes</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="knn">
+<h3>KNN<a class="headerlink" href="#knn" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+
+<span class="c1"># Latih model pada kolom topik tertentu</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Lakukan prediksi</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy_knn</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Akurasi model KNN: </span><span class="si">{</span><span class="n">accuracy_knn</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="random-forest">
+<h3>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi model Naive Bayes</span>
+<span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+
+<span class="c1"># Latih model pada kolom topik tertentu</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Lakukan prediksi</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy_rf</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Akurasi model Random Forest: </span><span class="si">{</span><span class="n">accuracy_rf</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="evaluasi-model">
+<h2>Evaluasi Model<a class="headerlink" href="#evaluasi-model" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Naive Bayes&#39;</span><span class="p">,</span> <span class="s1">&#39;KNN&#39;</span><span class="p">,</span> <span class="s1">&#39;Random Forest&#39;</span><span class="p">]</span>
+<span class="n">accuracies</span> <span class="o">=</span> <span class="p">[</span><span class="n">accuracy_naiveBayes</span><span class="p">,</span> <span class="n">accuracy_knn</span><span class="p">,</span> <span class="n">accuracy_rf</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">accuracies</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Akurasi Model&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Akurasi Model Machine Learning&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Sesuaikan dengan rentang akurasi (0-1)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Text_Rank.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Text Rank untuk mencari kata kunci data berita</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="UAS%20PPW.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>UAS PPW</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambil-data-berita"><strong>Ambil data berita</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi"><strong>Normalisasi</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-data-kosong"><strong>Cek data kosong</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punctuation"><strong>Punctuation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword"><strong>Stopword</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi"><strong>Tokenisasi</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gabung-hasil-tokenizing"><strong>Gabung Hasil Tokenizing</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#term-freq"><strong>Term Freq</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-occurance-matrics"><strong>Co-Occurance Matrics</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-graph-co-occurance"><strong>Membuat Graph Co-Occurance</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality"><strong>Centrality</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality"><strong>Closeness Centrality</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merangking-kata-kunci">merangking kata kunci</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meranking-node-dari-centrality"><strong>Meranking node dari centrality</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-kata-penting-berdasarkan-ranking"><strong>Menentukan Kata penting berdasarkan ranking</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank"><strong>Page Rank</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-page-rank">Perhitungan Manual Page Rank</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah">Langkah-Langkah</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-rumus">Algoritma (Rumus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#inisiasi-kalimat">1. Inisiasi Kalimat</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#term-vector">2. Term Vector</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#co-ocurrence-matrix">3. co-ocurrence matrix</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#graff">4. Graff</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-text-rank">5. menghitung text rank</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-3-kata-kunci-teratas">6. mengambil 3 kata kunci teratas</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-dengan-library">7. perbandingan dengan library</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meranking-kata-kunci">meranking kata kunci</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merangking-node-dari-page-rank"><strong>Merangking Node dari Page Rank</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Menentukan Kata Penting Berdasarkan Ranking</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepocessing-data-ringkasan"><strong>Prepocessing data ringkasan</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-data"><strong>Cleaning data</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Stopword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizer">Tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-data">TF-IDF DATA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menggabung-tf-idf-dengan-label">Menggabung TF-IDF dengan Label</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random Forest</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">Evaluasi Model</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

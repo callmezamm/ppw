@@ -30,8 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['datas = []', 'berita_ke = 0', 'for page in range(1,16):', "    url = f'https://indotimes.net/page/{page}/?s=politik'", '    ge = req.get(url).text']
+['datas = []', 'berita_ke = 0', 'for page in range(1,36):', "    url = f'https://indotimes.net/category/sport/page/{page}/'", '    ge = req.get(url).text']
 ...
-["              'Judul': title,", "              'Tanggal': date,", "              'Berita': news_full,", "              'Label': 'Politik'", '            })']
+['            datas.append({', "              'Judul': title,", "              'Berita': news_full,", "              'Label': 'Olahraga'", '            })']
 -------------------
 
